@@ -1,5 +1,5 @@
 # Time-Series-Clustering
-
+[@mpadillagarcia](https://github.com/mpadillagarcia)
 ## Description
 
 This project aims to develop clustering models to group cryptocurrencies based on the behavior of their price time series over a 365-day period. Using data from 234 cryptocurrencies obtained from the Binance platform, data cleaning and transformation techniques are applied to adapt them to the study's objectives. Clustering models are developed and evaluated using Python and Jupyter Notebook.
