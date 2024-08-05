@@ -13,20 +13,20 @@ The general objective is to apply a machine learning model to understand trends 
 The dataset used comes from a Kaggle repository containing information on cryptocurrencies from the Binance exchange. Work is done exclusively with USDT trading pairs due to their popularity and trading volume. The data includes fields such as opening price, traded volume, and opening time, among others.
 
 ### Data Transformation
-
+Among the data transformation steps are the following:
 1. **Elimination of Unnecessary Columns**: Columns that are not necessary for the analysis are removed (high, low, close, volume, number_of_trades, taker_buy_base_asset_volume, taker_buy_quote_asset_volume).
 2. **Renaming Columns**: 
    - `open_time` to `date`
    - `open` to `price`
    - `quote_asset_volume` to `volumen_usdt`
 3. **Data Grouping**: Data is grouped daily, using the arithmetic mean for prices and the sum for volume.
-4. **Selection of Time Interval**: A time interval between January 2020 and December 2022 is selected to maximize the amount of data from different cryptocurrencies.
+4. **Selection of Time Interval**: A python script is used to determine the best 365-days time interval between January 2020 and December 2022. It is selected to maximize the amount of data from different cryptocurrencies.
 
 ### Price Normalization and Smoothing
 
 Once prices have been normalized, the volatility of this sector can lead to large price changes in a short period. This can complicate the clustering process and the comparison of asset trends. For this reason, exponential moving average (EMA) fields have been added to the files based on the normalized price.
 
-The EMA is widely used in technical analysis of financial markets and smooths fluctuations in asset prices (Żbikowski, 2016). EMA 50, EMA 100, and EMA 200 are used in this work, being the most popular for studying asset trends in the cryptocurrency sector.
+The EMA is widely used in technical analysis of financial markets and smooths fluctuations in asset prices. EMA 50, EMA 100, and EMA 200 are used in this work, being the most popular for studying asset trends in the cryptocurrency sector.
 
 ## Clustering Models
 
@@ -36,15 +36,15 @@ This work implements various methods for clustering cryptocurrency time series u
 
 #### tslearn
 
-The tslearn package is one of the most widely used in the field of time series clustering and is specifically oriented towards time series clustering. Field studies like Asgari (2023) use this library among others.
+The tslearn package is one of the most widely used in the field of time series clustering and is specifically oriented towards time series clustering. Field studies use this library among others.
 
 1. **TimeSeriesKMeans**: Based on the K-means algorithm and oriented towards time series. It uses the DTW distance measure, which considers temporal shifts.
-2. **KShape**: Focuses on the shape of time series, using elastic alignment for comparison (Paparrizos & Gravano, 2015).
-3. **KernelKMeans**: Uses a kernel to map time series to a higher-dimensional feature space, capturing nonlinear relationships (Dhillon, Guan & Kulis, 2004). The RBF kernel is used in this case.
+2. **KShape**: Focuses on the shape of time series, using elastic alignment for comparison.
+3. **KernelKMeans**: Uses a kernel to map time series to a higher-dimensional feature space, capturing nonlinear relationships. The RBF kernel is used in this case.
 
 #### sktime
 
-The alternative to tslearn for time series clustering is sktime. This library offers interoperability with other widely used libraries like sklearn, pandas, and NumPy. It provides algorithms focused on time series, including machine learning models, transformation tools, and evaluation methods (Löning et al., 2019).
+The alternative to tslearn for time series clustering is sktime. This library offers interoperability with other widely used libraries like sklearn, pandas, and NumPy. It provides algorithms focused on time series, including machine learning models, transformation tools, and evaluation methods.
 
 1. **TimeSeriesKMeans**: Uses the mean of time series in each group as centroids.
 2. **TimeSeriesKMedoids**: Uses the time series from the dataset as medoids.
@@ -71,10 +71,5 @@ To run the models and reproduce the results:
 2. Install the dependencies listed in `requirements.txt`.
 3. Run the notebooks in Jupyter.
 
-## Contact
-
-For any inquiries or suggestions, please contact [Manuel Padilla García](mailto:your-email@domain.com).
-
----
 
 **Note:** This README is a summary of the project "Time Series Clustering Applied to the Cryptocurrency Market" and is designed to provide a clear and concise overview of the study's objectives, methods, and results.
