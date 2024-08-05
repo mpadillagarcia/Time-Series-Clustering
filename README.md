@@ -61,15 +61,6 @@ Default values are used for parameters like the maximum number of iterations and
 
 The results show that using the `ema200` field and applying the TimeSeriesKMeans and KernelKMeans methods provide the best clustering of cryptocurrencies based on their time series. While TimeSeriesKMeans offers more clearly defined clusters, KernelKMeans is more efficient in terms of execution time.
 
-## Usage
-
-To run the models and reproduce the results:
-
-1. Clone the repository.
-2. Install the dependencies listed in `requirements.txt`.
-3. Run the notebooks in Jupyter.
-
-
 **Note:** This README is a summary of the project "Time Series Clustering Applied to the Cryptocurrency Market" and is designed to provide a clear and concise overview of the study's objectives, methods, and results.
 
 [@mpadillagarcia](https://github.com/mpadillagarcia)
